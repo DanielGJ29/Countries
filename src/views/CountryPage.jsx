@@ -9,10 +9,11 @@ const CountryPage = ()=>{
     const [countryData, setCountryData]= useState([]);
     const [name, setName] = useState(null);
 
-    //funciones
-    const handleFetchCountryData = async () =>{
+    //Funciones
+    const handleFetchCountryData = async (e) =>{
+        e.preventDefault();
 
-        const response = await fetch("https://restcountries.eu/rest/v2/all");
+        const response = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
         const result = await response.json();
         console.log(result);
     }
@@ -23,7 +24,7 @@ const CountryPage = ()=>{
     return(
         <>
             <Country/>
-            <SearchForm/>
+            <SearchForm setName={setName} handleFetchCountryData={handleFetchCountryData}/>
         </>
     );
 ;}
