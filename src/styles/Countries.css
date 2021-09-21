@@ -119,3 +119,32 @@ p, h1,h2,h3,h4,h5{
 .header button{
     margin-top: 0;
 }
+
+/*Countries*/
+
+.main-countries{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+}
+.item-flag{
+    position: relative;
+    width: 100%;
+    /* height: 6rem; */
+    transition: 0.8s;
+}
+.item-flag:hover{
+    transform: scale(1.05);
+}
+.name-country{
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    position: absolute;
+    bottom: 0.3rem;
+    color: #ffff;
+    text-align: center;
+}
+.main-countries img{
+    width: 100%;
+}
